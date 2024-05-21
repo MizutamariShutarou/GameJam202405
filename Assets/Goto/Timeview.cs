@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Timeview : MonoBehaviour
 {
+  
     [SerializeField] Text timeviw;
     [SerializeField] float time = 60f;
 
@@ -26,6 +27,7 @@ public class Timeview : MonoBehaviour
         {
             time = 0;
             panel.SetActive(true);
+
         }
 
     }
