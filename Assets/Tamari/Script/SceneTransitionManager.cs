@@ -24,7 +24,7 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-    private void TransitionScene(string nextScene)
+    public void TransitionScene(string nextScene)
     {
         SceneManager.LoadScene(nextScene);
     }
