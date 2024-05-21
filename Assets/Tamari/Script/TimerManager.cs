@@ -13,8 +13,6 @@ public class TimerManager : MonoBehaviour
     [SerializeField] Timeview _timeView;
     public static TimerManager Instance;
 
-    [SerializeField] GameObject panel;
-
     private bool _isRunning = false;
 
     void Awake()
@@ -25,21 +23,18 @@ public class TimerManager : MonoBehaviour
     private void Start()
     {
         _isRunning = true;
-
-        if (panel == null) return;
-        panel.SetActive(false);
     }
 
     void Update()
     {
+        if (!_isRunning) return;
+        
         if (_timer <= 0)
         {
             _timer = 0;
             _isRunning = false;
-            panel.SetActive(true);
+            GameManager.Instance.State.Value = PlayerState.Finish;
         }
-
-        if (!_isRunning) return;
 
         _timer -= Time.deltaTime;
         _timeView.TimerView(_timer);
@@ -50,11 +45,11 @@ public class TimerManager : MonoBehaviour
         _timer += time;
         if (_timer <= 0)
         {
-            ResetTimer();
+            StopTimer();
         }
     }
 
-    public void ResetTimer()
+    public void StopTimer()
     {
         _timer = 0;
         _timeView.TimerView(_timer);

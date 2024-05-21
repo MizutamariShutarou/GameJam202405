@@ -1,25 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using UniRx;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class GameManager : MonoBehaviour
 {
-    void Start()
+    [SerializeField] private PlayerScript _player = default;
+    
+    [SerializeField] GameObject _panel;
+    
+    private ReactiveProperty<PlayerState> _playerState = new ReactiveProperty<PlayerState>();
+
+    public ReactiveProperty<PlayerState> State => _playerState;
+
+    private static GameManager _instance = default;
+
+    public static GameManager Instance => _instance;
+
+    private void Awake()
     {
-        
+        _instance = this;
     }
 
-    void Update()
+    private void Start()
     {
-        // 以下はギミック効果のデバッグ
-        if (Input.GetButtonDown("Jump"))
-        {
-            TimerManager.Instance.ChangeTime(-10f);
-        }
-        if (Input.GetButtonDown("Fire1"))
-        {
-            ScoreManager.Instance.AddScore(100);
-        }
+        Initialize();
     }
 
     /// <summary>
@@ -27,6 +35,35 @@ public class GameManager : MonoBehaviour
     /// </summary>
     private void Initialize()
     {
-        
+        _playerState.Value = PlayerState.Alive;
+        Bind();
+    }
+
+    private void Update()
+    {
+        if (Input.GetButtonDown("Jump"))
+        {
+            ScoreManager.Instance.AddScore(100);
+        }
+    }
+
+    /// <summary>
+    /// 登録処理
+    /// </summary>
+    private void Bind()
+    {
+        _playerState.Subscribe(state =>
+        {
+            if (state == PlayerState.Alive)
+            {
+                _panel.SetActive(false);
+            }
+            if (state == PlayerState.Finish)
+            {
+                ScoreManager.Instance.StopAddScore(); 
+                TimerManager.Instance.StopTimer();
+                _panel.SetActive(true);      
+            }
+        }).AddTo(this);
     }
 }
