@@ -240,5 +240,5 @@ MonoBehaviour:
     _verticalSpeed: 0
   _enemys:
   - {fileID: 2766170660484648064, guid: 3e7fb1838450eea4192b67c6a4ea0b4e, type: 3}
-  - {fileID: 2835486065580445872, guid: 732f79e026de4354a920bef0a3db178a, type: 3}
+  - {fileID: 7036124695321962146, guid: ea1f6a9a53f7ad24382a31d224777e79, type: 3}
   _spawnCoolTime: 2

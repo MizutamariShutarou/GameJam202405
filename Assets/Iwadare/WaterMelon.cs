@@ -14,5 +14,8 @@ public class WaterMelon : EnemyStatus
     public override void RodHitEvent() 
     {
         ScoreManager.Instance.AddScore(_plusScore);
+        /// 割れる処理
+        if (_animObject) _animObject.SetTrigger("CutTrigget");
+        /// 
     }
 }

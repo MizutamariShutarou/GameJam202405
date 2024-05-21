@@ -1,4 +1,6 @@
-﻿using Unity.VisualScripting;
+﻿using System;
+using Unity.VisualScripting;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -7,8 +9,8 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
     Rigidbody2D _rb;
     [SerializeField] float _horizontalValue = 1f;
     [SerializeField] float _verticalValue = 1f;
-    public bool _cut;
-    [SerializeField] Animator _animObject;
+    [NonSerialized] public bool _cut;
+    public Animator _animObject;
     public bool _isGravityScale = true;
     [SerializeField] float _destroyTime = 5f;
 
@@ -29,12 +31,13 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
 
     }
 
-    /// <summary>デバック用処理</summary>
+    /// <summary>切った時の処理</summary>
     public void Cut()
     {
+        if (_cut) { return; }
         _cut = true;
         Debug.Log("切られた");
-        if (_animObject) _animObject.SetTrigger("CutTrigget");
+        RodHitEvent();
     }
 
     /// <summary>オブジェクトを動かすときの処理(派生クラスにオーバーライド可能)</summary>
@@ -42,7 +45,7 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
     /// <param name="vertical"></param>
     public virtual void ObjectMove(float horizontal, float vertical)
     {
-        Debug.Log(horizontal);
+        FlipX(horizontal);
         _rb = GetComponent<Rigidbody2D>();
         if (_rb)
         {
@@ -61,9 +64,30 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
         }
     }
 
+    void FlipX(float horizontal)
+    {
+        if(horizontal < 0) 
+        {
+            var scale = transform.localScale;
+            scale.x *= -scale.x;
+            transform.localScale = scale;
+        }
+    }
+
     /// <summary>プレイヤーに当たった時の処理</summary>
     public abstract void PlayerHitEvent();
 
     /// <summary>棒に当たった時の処理</summary>
     public abstract void RodHitEvent();
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (_cut) { return; }
+        if (collision.TryGetComponent<PlayerScript>(out var player))
+        {
+            _cut = true;
+            Debug.Log("当たった");
+            PlayerHitEvent();
+        }
+    }
 }
