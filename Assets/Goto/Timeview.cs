@@ -5,12 +5,15 @@ using UnityEngine.UI;
 
 public class Timeview : MonoBehaviour
 {
-   [SerializeField] Text timeviw;
-   [SerializeField] float time = 60f;
+    [SerializeField] Text timeviw;
+    [SerializeField] float time = 60f;
+
+    [SerializeField] GameObject panel;
     // Start is called before the first frame update
     void Start()
     {
-       timeviw.text = time.ToString("d2");
+        timeviw.text = time.ToString();
+        panel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,6 +25,7 @@ public class Timeview : MonoBehaviour
         if (time <= 0)
         {
             time = 0;
+            panel.SetActive(true);
         }
 
     }
