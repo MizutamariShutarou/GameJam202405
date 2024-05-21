@@ -6,20 +6,25 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerScript : MonoBehaviour
 {
-    EnemyWaterMelon _enemy = default;
+    EnemyStatus _enemy = default;
 
     Rigidbody2D _p_move = default;
 
-    int jumpSpeed = 15;
+    SpriteRenderer _spriteRenderer;
 
-    bool facingleft = false;
+    int _jumpSpeed = 15;
+
+    public string _groundTag = "Ground";
+
+    public bool _checkGround = true;
+
+    private bool _canJump = true;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            _enemy = collision.GetComponent<EnemyWaterMelon>();
-            Debug.Log("Hit");
+            _enemy = collision.GetComponent<EnemyStatus>();
         }
     }
 
@@ -35,6 +40,7 @@ public class PlayerScript : MonoBehaviour
     void Start()
     {
         _p_move = GetComponent<Rigidbody2D>();
+        _spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -54,22 +60,31 @@ public class PlayerScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            Debug.Log("スペースが押された");
-            _p_move.AddForce(Vector2.up * jumpSpeed, ForceMode2D.Impulse);
-            
+            if (_canJump)
+            {
+                _p_move.AddForce(Vector2.up * _jumpSpeed, ForceMode2D.Impulse);
+                _canJump = !_checkGround;
+            }
+
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            Debug.Log("Aが押された");
             transform.localScale = new Vector3(-1 * Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y, this.transform.localScale.z);
-            facingleft = true;
-
+            //_spriteRenderer.flipX = true;
         }
         if (Input.GetKeyDown(KeyCode.D))
         {
-            Debug.Log("Dが押された");
             transform.localScale = new Vector3(Mathf.Abs(this.transform.localScale.x), this.transform.localScale.y, this.transform.localScale.z);
-            facingleft = false;
+            //_spriteRenderer.flipX = false;
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collisionData)
+    {
+        if (_checkGround
+            && collisionData.gameObject.CompareTag(_groundTag))
+        {
+            _canJump = true;
         }
     }
 }
