@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class sukoa : MonoBehaviour
+public class Scoreview : MonoBehaviour
 {
     
     [SerializeField] Text scoretext;
