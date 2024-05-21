@@ -4,5 +4,7 @@ using UnityEngine;
 
 public interface ItemInterface
 {
-    public void ItemEventActivate();
+    public void PlayerHitEvent();
+
+    public void RodHitEvent();
 }

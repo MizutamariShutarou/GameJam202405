@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class WaterMelon : EnemyStatus
 {
-    public override void ItemEventActivate() 
-    { 
-        return; 
+    [SerializeField] int _plusScore = 3;
+
+    public override void PlayerHitEvent() 
+    {
+        return;
+    }
+
+    public override void RodHitEvent() 
+    {
+        ScoreManager.Instance.AddScore(_plusScore);
     }
 }

@@ -6,22 +6,23 @@ using UnityEngine;
 public class SpawnEnemy : MonoBehaviour
 {
     [SerializeField] MovePatternState _currentState;
-    [SerializeField] MovePattern[] _movePattern;
-    [SerializeField] EnemyStatus _enemy;
+    [SerializeField] RbMovePattern[] _RbMovePattern;
+    [SerializeField] EnemyStatus[] _rbEnemy;
     // Start is called before the first frame update
     void Start()
     {
         int number = 0;
-        for (var i = 0; i < _movePattern.Length; i++)
+        for (var i = 0; i < _RbMovePattern.Length; i++)
         {
-            if(_currentState == _movePattern[i].State)
+            if(_currentState == _RbMovePattern[i].State)
             {
                 number = i;
                 break;
             }
         }
-        _enemy = Instantiate(_enemy, _movePattern[number]._spawnPoint.position, Quaternion.identity);
-        _enemy.ObjectMove(_movePattern[number]._horizontalSpeed, _movePattern[number]._verticalSpeed);
+        var randomObj = UnityEngine.Random.Range(0, _rbEnemy.Length);
+        var enemy = Instantiate(_rbEnemy[randomObj], _RbMovePattern[number]._spawnPoint.position, Quaternion.identity);
+        enemy.ObjectMove(_RbMovePattern[number]._horizontalSpeed, _RbMovePattern[number]._verticalSpeed);
     }
 
     // Update is called once per frame
@@ -34,12 +35,12 @@ public class SpawnEnemy : MonoBehaviour
     {
         Forward,
         ForwardUp,
-        BackWard,
-        Up,
+        BackYard,
+        BackYardUp,
     }
 
     [Serializable]
-    struct MovePattern
+    struct RbMovePattern
     {
         public MovePatternState State;
         public Transform _spawnPoint;

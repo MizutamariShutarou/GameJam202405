@@ -1,20 +1,19 @@
 ﻿using UnityEngine;
 
-public class EnemyStatus : MonoBehaviour, ItemInterface
+public abstract class EnemyStatus : MonoBehaviour, ItemInterface
 {
     Rigidbody2D _rb;
     [SerializeField] float _horizontalSpeed = 10;
     [SerializeField] float _verticalSpeed = 0;
     public bool _cut;
     [SerializeField] Animator _animObject;
-    [SerializeField] bool _initMove = true;
+    [SerializeField] bool _debug = true;
 
 
     // Start is called before the first frame update
     void Start()
     {
-       
-        if(_initMove) ObjectMove(_horizontalSpeed, _verticalSpeed);
+        if(_debug) ObjectMove(_horizontalSpeed, _verticalSpeed);
     }
 
     // Update is called once per frame
@@ -23,12 +22,7 @@ public class EnemyStatus : MonoBehaviour, ItemInterface
 
     }
 
-    public void ObjectMove(float horizontal, float vertical)
-    {
-        _rb = GetComponent<Rigidbody2D>();
-        if (_rb) _rb.velocity = Vector2.left * horizontal + Vector2.down * vertical;
-    }
-
+    /// <summary>デバック用処理</summary>
     public void Cut()
     {
         _cut = true;
@@ -36,5 +30,19 @@ public class EnemyStatus : MonoBehaviour, ItemInterface
         if (_animObject) _animObject.SetTrigger("CutTrigget");
     }
 
-    public virtual void ItemEventActivate() { return; }
+    /// <summary>オブジェクトを動かすときの処理(派生クラスにオーバーライド可能)</summary>
+    /// <param name="horizontal"></param>
+    /// <param name="vertical"></param>
+    public virtual void ObjectMove(float horizontal, float vertical)
+    {
+        Debug.Log(horizontal);
+        _rb = GetComponent<Rigidbody2D>();
+        if (_rb) _rb.AddForce(Vector2.left * horizontal + Vector2.up * vertical, ForceMode2D.Impulse);
+    }
+
+    /// <summary>プレイヤーに当たった時の処理</summary>
+    public abstract void PlayerHitEvent();
+
+    /// <summary>棒に当たった時の処理</summary>
+    public abstract void RodHitEvent();
 }

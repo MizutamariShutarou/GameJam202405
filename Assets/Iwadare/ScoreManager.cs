@@ -8,10 +8,11 @@ public class ScoreManager : MonoBehaviour
     int _score;
     public int Score => _score;
     [SerializeField] Scoreview _scoreView;
+    public static ScoreManager Instance;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        
+        Instance = this;
     }
 
     // Update is called once per frame
