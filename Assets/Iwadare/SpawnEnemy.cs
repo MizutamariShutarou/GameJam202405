@@ -5,30 +5,40 @@ using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
 {
-    [SerializeField] MovePatternState _currentState;
-    [SerializeField] RbMovePattern[] _RbMovePattern;
-    [SerializeField] EnemyStatus[] _rbEnemy;
+    [SerializeField] MovePattern[] _rbMovePattern;
+    [SerializeField] MovePattern[] _notGravityMovePattern;
+    [SerializeField] EnemyStatus[] _enemys;
+    [SerializeField] float _spawnCoolTime = 2f;
+    float _currentCoolTime = 0f;
     // Start is called before the first frame update
     void Start()
     {
-        int number = 0;
-        for (var i = 0; i < _RbMovePattern.Length; i++)
-        {
-            if(_currentState == _RbMovePattern[i].State)
-            {
-                number = i;
-                break;
-            }
-        }
-        var randomObj = UnityEngine.Random.Range(0, _rbEnemy.Length);
-        var enemy = Instantiate(_rbEnemy[randomObj], _RbMovePattern[number]._spawnPoint.position, Quaternion.identity);
-        enemy.ObjectMove(_RbMovePattern[number]._horizontalSpeed, _RbMovePattern[number]._verticalSpeed);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        _currentCoolTime += Time.deltaTime;
+
+        if(_currentCoolTime < _spawnCoolTime) { return; }
+
+        _currentCoolTime = 0f;
+        var randomObj = UnityEngine.Random.Range(0, _enemys.Length);
+        if (_enemys[randomObj]._isGravityScale)
+        {
+            var moveNumber = UnityEngine.Random.Range(0, _rbMovePattern.Length);
+
+            var enemy = Instantiate(_enemys[randomObj], _rbMovePattern[moveNumber]._spawnPoint.position, Quaternion.identity);
+            enemy.ObjectMove(_rbMovePattern[moveNumber]._horizontalSpeed, _rbMovePattern[moveNumber]._verticalSpeed);
+        }
+        else
+        {
+            var moveNumber = UnityEngine.Random.Range(0, _notGravityMovePattern.Length);
+
+            var enemy = Instantiate(_enemys[randomObj], _notGravityMovePattern[moveNumber]._spawnPoint.position, Quaternion.identity);
+            enemy.ObjectMove(_notGravityMovePattern[moveNumber]._horizontalSpeed, _notGravityMovePattern[moveNumber]._verticalSpeed);
+        }
     }
 
     enum MovePatternState
@@ -40,7 +50,7 @@ public class SpawnEnemy : MonoBehaviour
     }
 
     [Serializable]
-    struct RbMovePattern
+    struct MovePattern
     {
         public MovePatternState State;
         public Transform _spawnPoint;

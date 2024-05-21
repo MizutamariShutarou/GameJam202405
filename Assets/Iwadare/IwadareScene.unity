@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 83211906}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.75, y: -3, z: 0}
+  m_LocalPosition: {x: -10, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -164,7 +164,7 @@ GameObject:
   m_Component:
   - component: {fileID: 188323196}
   m_Layer: 0
-  m_Name: UP
+  m_Name: ForwardUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ Transform:
   m_GameObject: {fileID: 188323195}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.19, y: 6.77, z: 0}
+  m_LocalPosition: {x: 10, y: 2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -283,7 +283,7 @@ GameObject:
   - component: {fileID: 530730391}
   - component: {fileID: 530730390}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: GravityEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -368,10 +368,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810f8db250b9d24499ef09ff792ef322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 10
-  _verticalSpeed: 0
+  _horizontalValue: 1
+  _verticalValue: 1
   _cut: 0
   _animObject: {fileID: 0}
+  _isGravityScale: 1
+  _destroyTime: 5
   _debug: 0
   _plusScore: 3
 --- !u!58 &530730390
@@ -403,7 +405,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -857,6 +859,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1023558468
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1023558469}
+  m_Layer: 0
+  m_Name: BackYardUp
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1023558469
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023558468}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -10, y: 2, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1770158957}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1127180613
 GameObject:
   m_ObjectHideFlags: 0
@@ -1057,7 +1090,7 @@ Transform:
   m_GameObject: {fileID: 1362853593}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 10.08, y: -3, z: 0}
+  m_LocalPosition: {x: 10, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1176,27 +1209,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0047bced80df084ea927d68a888135b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _currentState: 3
-  _RbMovePattern:
+  _rbMovePattern:
+  - State: 0
+    _spawnPoint: {fileID: 1362853594}
+    _horizontalSpeed: 10
+    _verticalSpeed: 5
+  - State: 0
+    _spawnPoint: {fileID: 1362853594}
+    _horizontalSpeed: 10
+    _verticalSpeed: 10
+  - State: 2
+    _spawnPoint: {fileID: 83211907}
+    _horizontalSpeed: -10
+    _verticalSpeed: 5
+  - State: 2
+    _spawnPoint: {fileID: 83211907}
+    _horizontalSpeed: -10
+    _verticalSpeed: 10
+  _notGravityMovePattern:
   - State: 0
     _spawnPoint: {fileID: 1362853594}
     _horizontalSpeed: 10
     _verticalSpeed: 0
   - State: 1
-    _spawnPoint: {fileID: 1362853594}
+    _spawnPoint: {fileID: 188323196}
     _horizontalSpeed: 10
-    _verticalSpeed: 5
+    _verticalSpeed: 0
   - State: 2
     _spawnPoint: {fileID: 83211907}
     _horizontalSpeed: -10
     _verticalSpeed: 0
   - State: 3
-    _spawnPoint: {fileID: 83211907}
+    _spawnPoint: {fileID: 1023558469}
     _horizontalSpeed: -10
-    _verticalSpeed: 10
-  _rbEnemy:
+    _verticalSpeed: 0
+  _enemys:
   - {fileID: 530730389}
   - {fileID: 1854901152}
+  _spawnCoolTime: 2
 --- !u!1 &1770158956
 GameObject:
   m_ObjectHideFlags: 0
@@ -1226,9 +1276,10 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 188323196}
   - {fileID: 1362853594}
+  - {fileID: 188323196}
   - {fileID: 83211907}
+  - {fileID: 1023558469}
   m_Father: {fileID: 1750853896}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1854901149
@@ -1243,49 +1294,14 @@ GameObject:
   - component: {fileID: 1854901153}
   - component: {fileID: 1854901152}
   - component: {fileID: 1854901151}
-  - component: {fileID: 1854901150}
+  - component: {fileID: 1854901155}
   m_Layer: 0
-  m_Name: Suquare
+  m_Name: NotGravityEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!58 &1854901150
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1854901149}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!50 &1854901151
 Rigidbody2D:
   serializedVersion: 4
@@ -1325,10 +1341,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 810f8db250b9d24499ef09ff792ef322, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalSpeed: 10
-  _verticalSpeed: 0
+  _horizontalValue: 1
+  _verticalValue: 1
   _cut: 0
   _animObject: {fileID: 0}
+  _isGravityScale: 0
+  _destroyTime: 5
   _debug: 0
   _plusScore: 3
 --- !u!212 &1854901153
@@ -1398,6 +1416,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1854901155
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1854901149}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
 --- !u!1 &1988748237
 GameObject:
   m_ObjectHideFlags: 0

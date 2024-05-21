@@ -1,19 +1,26 @@
-﻿using UnityEngine;
+﻿using Unity.VisualScripting;
+using UnityEngine;
+using UnityEngine.UIElements;
 
 public abstract class EnemyStatus : MonoBehaviour, ItemInterface
 {
     Rigidbody2D _rb;
-    [SerializeField] float _horizontalSpeed = 10;
-    [SerializeField] float _verticalSpeed = 0;
+    [SerializeField] float _horizontalValue = 1f;
+    [SerializeField] float _verticalValue = 1f;
     public bool _cut;
     [SerializeField] Animator _animObject;
-    [SerializeField] bool _debug = true;
+    public bool _isGravityScale = true;
+    [SerializeField] float _destroyTime = 5f;
+
+    [SerializeField] bool _debug = false;
+    
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if(_debug) ObjectMove(_horizontalSpeed, _verticalSpeed);
+        if(_debug) ObjectMove(_horizontalValue, _verticalValue);
+        Destroy(this.gameObject,_destroyTime);
     }
 
     // Update is called once per frame
@@ -37,7 +44,21 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
     {
         Debug.Log(horizontal);
         _rb = GetComponent<Rigidbody2D>();
-        if (_rb) _rb.AddForce(Vector2.left * horizontal + Vector2.up * vertical, ForceMode2D.Impulse);
+        if (_rb)
+        {
+            if (_isGravityScale) 
+            {
+                _rb.gravityScale = 1;
+                _rb.AddForce(Vector2.left * horizontal * _horizontalValue + 
+                    Vector2.up * vertical * _verticalValue, 
+                    ForceMode2D.Impulse); 
+            }
+            else 
+            {
+                _rb.gravityScale = 0;
+                _rb.velocity = Vector2.left * horizontal * _horizontalValue + Vector2.up * vertical * _verticalValue; 
+            }
+        }
     }
 
     /// <summary>プレイヤーに当たった時の処理</summary>
