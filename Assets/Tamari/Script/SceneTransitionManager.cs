@@ -6,9 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneTransitionManager : MonoBehaviour
 {
-    public SceneTransitionManager _instance = default;
+    private static SceneTransitionManager _instance = default;
 
-    private SceneTransitionManager Instance => _instance;
+    public static SceneTransitionManager Instance => _instance;
 
     private void Awake()
     {
@@ -24,7 +24,7 @@ public class SceneTransitionManager : MonoBehaviour
         }
     }
 
-    private void TransitionScene(string nextScene)
+    public void TransitionScene(string nextScene)
     {
         SceneManager.LoadScene(nextScene);
     }
