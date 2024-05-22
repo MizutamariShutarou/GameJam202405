@@ -17,6 +17,7 @@ public class pause : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(TimerManager.Instance.CurrentTime <= 0) return;
 
         if (ispose == false && Input.GetKeyDown(KeyCode.Escape))
         {

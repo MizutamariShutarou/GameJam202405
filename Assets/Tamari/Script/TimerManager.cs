@@ -15,19 +15,21 @@ public class TimerManager : MonoBehaviour
     public static TimerManager Instance;
 
     private float _currentTime = 0f;
+    public float CurrentTime => _currentTime;
     private bool _isRunning = false;
 
     void Awake()
     {
         Instance = this;
     }
+
     void Update()
     {
         if (!_isRunning) return;
-        
+
         _currentTime -= Time.deltaTime;
         _timeView.TimerView(_currentTime);
-        
+
         if (_currentTime <= 0)
         {
             StopTimer();
