@@ -169,7 +169,7 @@ MonoBehaviour:
   _destroyTime: 5
   _cutDestroyTime: 1
   _debug: 0
-  _addScore: -3
+  _addScore: -2000
   _explosion: {fileID: 4914367121018836764, guid: 1d407f132a4e1374b965edb75adebfed, type: 3}
   _smork: {fileID: 474562856718498399, guid: c66455e4f022ea545b9c94f1f14f5c52, type: 3}
 --- !u!95 &4906093702987327816

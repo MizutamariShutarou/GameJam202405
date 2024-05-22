@@ -10,8 +10,7 @@ public class PositiveDrink : EnemyStatus
     {
         TimerManager.Instance.ChangeTime(_changeTime);
         ///ドリンクのむSE追加
-
-        ///
+        SEController.Instance.RunSE(SEController.SE.Drink);
         Destroy(gameObject);
     }
 

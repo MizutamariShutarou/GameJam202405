@@ -168,4 +168,4 @@ MonoBehaviour:
   _destroyTime: 5
   _cutDestroyTime: 1
   _debug: 0
-  _changeTime: -10
+  _changeTime: -8

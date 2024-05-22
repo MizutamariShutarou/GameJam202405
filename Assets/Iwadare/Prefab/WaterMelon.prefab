@@ -107,7 +107,7 @@ MonoBehaviour:
   _destroyTime: 5
   _cutDestroyTime: 1
   _debug: 0
-  _plusScore: 3
+  _plusScore: 500
 --- !u!50 &8813707232255989302
 Rigidbody2D:
   serializedVersion: 4
