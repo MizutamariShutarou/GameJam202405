@@ -6,7 +6,7 @@ public class PositiveDrink : EnemyStatus
 {
     [SerializeField] private float _changeTime = 3f;
     
-    public override void PlayerHitEvent() 
+    public override void PlayerHitEvent(Animator playerAnim) 
     {
         TimerManager.Instance.ChangeTime(_changeTime);
         Destroy(gameObject);

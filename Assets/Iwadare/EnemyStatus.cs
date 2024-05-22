@@ -74,7 +74,7 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
     }
 
     /// <summary>プレイヤーに当たった時の処理</summary>
-    public abstract void PlayerHitEvent();
+    public abstract void PlayerHitEvent(Animator playerAnim);
 
     /// <summary>棒に当たった時の処理</summary>
     public abstract void RodHitEvent();
@@ -84,9 +84,10 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
         if (_cut) { return; }
         if (collision.TryGetComponent<PlayerScript>(out var player))
         {
+            var playerAnim = player.GetComponent<Animator>();
             _cut = true;
             Debug.Log("当たった");
-            PlayerHitEvent();
+            PlayerHitEvent(playerAnim);
         }
     }
 

@@ -45,7 +45,7 @@ public class PlayerScript : MonoBehaviour
     {
         _p_move = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        _exclanmation.gameObject.SetActive(false);
+        if(_exclanmation) _exclanmation.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public interface ItemInterface
 {
-    public void PlayerHitEvent();
+    public void PlayerHitEvent(Animator playerAnim);
 
     public void RodHitEvent();
 }

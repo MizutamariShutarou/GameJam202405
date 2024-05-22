@@ -6,7 +6,7 @@ public class WaterMelon : EnemyStatus
 {
     [SerializeField] int _plusScore = 3;
 
-    public override void PlayerHitEvent() 
+    public override void PlayerHitEvent(Animator playerAnim) 
     {
         Destroy(gameObject);
     }

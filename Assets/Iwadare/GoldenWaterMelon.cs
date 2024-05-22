@@ -6,7 +6,7 @@ public class GoldenWaterMelon : EnemyStatus
 {
     [SerializeField] private int _changeScore = -5;
     
-    public override void PlayerHitEvent() 
+    public override void PlayerHitEvent(Animator playerAnim) 
     {
         Destroy(gameObject);
         return;

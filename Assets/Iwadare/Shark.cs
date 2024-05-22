@@ -6,7 +6,7 @@ public class Shark : EnemyStatus
 {
     [SerializeField] private int _changeScore = -3;
     [SerializeField] private GameObject _deathShark;
-    public override void PlayerHitEvent() 
+    public override void PlayerHitEvent(Animator playerAnim) 
     {
         ScoreManager.Instance.AddScore(_changeScore);
         return;
