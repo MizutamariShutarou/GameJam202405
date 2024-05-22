@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class pouse : MonoBehaviour
+public class pause : MonoBehaviour
 {
     bool ispose = false;
 
-    [SerializeField] GameObject pousepanel;
+    [SerializeField] GameObject pausepanel;
     // Start is called before the first frame update
     void Start()
     {
-        
+        pausepanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class pouse : MonoBehaviour
             ispose = true;
             Time.timeScale = 0;
 
-            pousepanel.SetActive(true);
+            pausepanel.SetActive(true);
             // panel表示
 
             return;
@@ -35,7 +35,7 @@ public class pouse : MonoBehaviour
             Time.timeScale = 1;
 
             // panel非表示
-            pousepanel.SetActive(false);
+            pausepanel.SetActive(false);
 
             return;
         }
