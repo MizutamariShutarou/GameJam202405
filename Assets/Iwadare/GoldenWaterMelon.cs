@@ -9,6 +9,7 @@ public class GoldenWaterMelon : EnemyStatus
     public override void PlayerHitEvent(Animator playerAnim) 
     {
         playerAnim.SetTrigger("HitTrigger");
+        SEController.Instance.RunSE(SEController.SE.Conflict);
         Destroy(gameObject);
         return;
     }
@@ -18,6 +19,7 @@ public class GoldenWaterMelon : EnemyStatus
         ScoreManager.Instance.AddScore(_changeScore);
         Debug.Log("金メロンわりました");
         _animObject.SetTrigger("CutTrigger");
+        SEController.Instance.RunSE(SEController.SE.Attack);
         StartCoroutine(EnemyDestroyTime());
     }
 }

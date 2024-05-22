@@ -75,7 +75,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4000
   m_Sprite: {fileID: 21300000, guid: 21dbe56908b802344bc6d3e4a0acfed3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -131,6 +131,7 @@ MonoBehaviour:
   _animObject: {fileID: 0}
   _isGravityScale: 0
   _destroyTime: 5
+  _cutDestroyTime: 1
   _debug: 0
   _changeScore: -3
   _deathShark: {fileID: 2758828361236859484, guid: 5079a237cdfe9bc48a61912a24b89f5c, type: 3}

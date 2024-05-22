@@ -10,6 +10,7 @@ public class Shark : EnemyStatus
     {
         ScoreManager.Instance.AddScore(_changeScore);
         playerAnim.SetTrigger("DamageTrigger");
+        SEController.Instance.RunSE(SEController.SE.Conflict);
         return;
     }
 
@@ -18,6 +19,7 @@ public class Shark : EnemyStatus
         Debug.Log("サメ死亡");
         var shark = Instantiate(_deathShark,transform.position,Quaternion.identity);
         shark.transform.localScale = transform.localScale;
+        SEController.Instance.RunSE(SEController.SE.Attack);
         Destroy(gameObject);
     }
 }

@@ -10,12 +10,14 @@ public class PoisonDrink : EnemyStatus
     {
         TimerManager.Instance.ChangeTime(_changeTime);
         playerAnim.SetTrigger("DamageTrigger");
+        SEController.Instance.RunSE(SEController.SE.Conflict);
         Destroy(gameObject);
     }
 
     public override void RodHitEvent() 
     {
         Debug.Log("毒ジュースわれました");
+        SEController.Instance.RunSE(SEController.SE.Juice);
         Destroy(gameObject);
     }
 }
