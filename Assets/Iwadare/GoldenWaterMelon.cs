@@ -19,6 +19,7 @@ public class GoldenWaterMelon : EnemyStatus
         ScoreManager.Instance.AddScore(_changeScore);
         Debug.Log("金メロンわりました");
         _animObject.SetTrigger("CutTrigger");
+        SEController.Instance.RunSE(SEController.SE.Attack);
         StartCoroutine(EnemyDestroyTime());
     }
 }
