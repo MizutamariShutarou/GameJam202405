@@ -22,6 +22,8 @@ public class PlayerScript : MonoBehaviour
 
     [SerializeField] Transform _exclanmation;
 
+    [SerializeField] Animator _playerAnim;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
@@ -53,6 +55,7 @@ public class PlayerScript : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
+            if (_playerAnim) { _playerAnim.SetTrigger("CutTrigger"); }
             if (_enemy == null)
             {
                 Debug.Log("クリックされた");

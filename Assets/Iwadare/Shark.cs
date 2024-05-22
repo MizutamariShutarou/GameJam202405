@@ -9,6 +9,7 @@ public class Shark : EnemyStatus
     public override void PlayerHitEvent(Animator playerAnim) 
     {
         ScoreManager.Instance.AddScore(_changeScore);
+        playerAnim.SetTrigger("DamageTrigger");
         return;
     }
 

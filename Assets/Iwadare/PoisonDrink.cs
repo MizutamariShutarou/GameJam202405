@@ -9,6 +9,7 @@ public class PoisonDrink : EnemyStatus
     public override void PlayerHitEvent(Animator playerAnim) 
     {
         TimerManager.Instance.ChangeTime(_changeTime);
+        playerAnim.SetTrigger("DamageTrigger");
         Destroy(gameObject);
     }
 

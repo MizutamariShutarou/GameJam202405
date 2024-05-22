@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1317758376419330642, guid: 3b00896816d6ac14a9bbb026786d6ba9, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.96
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 1317758376419330642, guid: 3b00896816d6ac14a9bbb026786d6ba9, type: 3}
       propertyPath: m_LocalPosition.z
@@ -171,16 +171,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 6585273963844919521, guid: 3b00896816d6ac14a9bbb026786d6ba9, type: 3}
-      propertyPath: m_SortingOrder
-      value: 5000
-      objectReference: {fileID: 0}
     - target: {fileID: 6956267389573449015, guid: 3b00896816d6ac14a9bbb026786d6ba9, type: 3}
       propertyPath: m_Name
-      value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 6956267389573449015, guid: 3b00896816d6ac14a9bbb026786d6ba9, type: 3}
-      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7254213951641439419, guid: 3b00896816d6ac14a9bbb026786d6ba9, type: 3}
@@ -1350,11 +1342,11 @@ PrefabInstance:
       objectReference: {fileID: 4942078871842424900, guid: 9773f3da06658c84f8612c112fbe3573, type: 3}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _rbMovePattern.Array.data[1]._verticalSpeed
-      value: 9
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _rbMovePattern.Array.data[3]._verticalSpeed
-      value: 9
+      value: 9.5
       objectReference: {fileID: 0}
     - target: {fileID: 8985423616086424068, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: m_Name

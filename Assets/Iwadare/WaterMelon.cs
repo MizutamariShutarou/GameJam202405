@@ -8,6 +8,7 @@ public class WaterMelon : EnemyStatus
 
     public override void PlayerHitEvent(Animator playerAnim) 
     {
+        playerAnim.SetTrigger("HitTrigger");
         Destroy(gameObject);
     }
 
