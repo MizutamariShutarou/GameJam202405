@@ -8,6 +8,7 @@ public class WaterMelon : EnemyStatus
 
     public override void PlayerHitEvent() 
     {
+        Destroy(gameObject);
         return;
     }
 
@@ -15,6 +16,7 @@ public class WaterMelon : EnemyStatus
     {
         ScoreManager.Instance.AddScore(_plusScore);
         /// 割れる処理
+        Debug.Log("メロン割れた");
         if (_animObject) _animObject.SetTrigger("CutTrigget");
         /// 
     }

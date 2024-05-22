@@ -20,11 +20,14 @@ public class PlayerScript : MonoBehaviour
 
     private bool _canJump = true;
 
+    [SerializeField] Transform _exclanmation;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             _enemy = collision.GetComponent<EnemyStatus>();
+            if (!_enemy._cut) { _exclanmation.gameObject.SetActive(true); }
         }
     }
 
@@ -33,6 +36,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             _enemy = null;
+            _exclanmation.gameObject.SetActive(false);
         }
 
     }
@@ -41,6 +45,7 @@ public class PlayerScript : MonoBehaviour
     {
         _p_move = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
+        _exclanmation.gameObject.SetActive(false);
     }
 
     // Update is called once per frame

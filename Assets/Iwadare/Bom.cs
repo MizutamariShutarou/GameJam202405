@@ -9,7 +9,7 @@ public class Bom : EnemyStatus
     {
         ScoreManager.Instance.AddScore(_addScore);
         /// 爆発処理
-        
+        Debug.Log("ボム爆発");
         /// 
     }
 
@@ -17,7 +17,7 @@ public class Bom : EnemyStatus
     {
         ScoreManager.Instance.AddScore(_addScore);
         /// 爆発処理
-
+        Debug.Log("ボム爆発");
         /// 
     }
 }
