@@ -13,6 +13,7 @@ public class Bom : EnemyStatus
         /// 爆発処理
         Instantiate(_explosion, transform.position, Quaternion.identity);
         Instantiate(_smork, transform.position, Quaternion.identity);
+        SEController.Instance.RunSE(SEController.SE.Bomb);
         playerAnim.SetTrigger("DamageTrigger");
         Debug.Log("ボム爆発");
         /// 
@@ -25,6 +26,8 @@ public class Bom : EnemyStatus
         /// 爆発処理
         Instantiate(_explosion,transform.position,Quaternion.identity);
         Instantiate(_smork, transform.position, Quaternion.identity);
+
+        SEController.Instance.RunSE(SEController.SE.Bomb);
         Animator playerAnim = GameObject.FindWithTag("Player").GetComponent<Animator>();
         playerAnim.SetTrigger("DamageTrigger");
         Debug.Log("ボム爆発");
