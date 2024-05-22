@@ -9,6 +9,7 @@ public class WaterMelon : EnemyStatus
     public override void PlayerHitEvent(Animator playerAnim) 
     {
         playerAnim.SetTrigger("HitTrigger");
+        SEController.Instance.RunSE(SEController.SE.Conflict);
         Destroy(gameObject);
     }
 
@@ -18,6 +19,7 @@ public class WaterMelon : EnemyStatus
         /// 割れる処理
         Debug.Log("メロン割れた");
         if (_animObject) _animObject.SetTrigger("CutTrigger");
+        SEController.Instance.RunSE(SEController.SE.Attack);
         StartCoroutine(EnemyDestroyTime());
         /// 
     }

@@ -1314,7 +1314,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _enemys.Array.size
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _enemys.Array.data[0]

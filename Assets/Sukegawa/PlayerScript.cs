@@ -59,6 +59,7 @@ public class PlayerScript : MonoBehaviour
             if (_enemy == null)
             {
                 Debug.Log("クリックされた");
+                SEController.Instance.RunSE(SEController.SE.DontHit);
             }
 
             if (_enemy != null)
