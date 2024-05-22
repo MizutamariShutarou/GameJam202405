@@ -385,6 +385,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 58577745}
+  - {fileID: 696497619}
+  - {fileID: 589007648}
+  - {fileID: 1007635475}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &387231682
@@ -802,11 +805,11 @@ Transform:
   m_GameObject: {fileID: 589007646}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.15875223, w: 0.9873185}
-  m_LocalPosition: {x: -8.0043, y: -4.0989, z: 10}
-  m_LocalScale: {x: 0.547282, y: 0.55866396, z: 1}
+  m_LocalPosition: {x: -6.572, y: -3.3264, z: 0}
+  m_LocalScale: {x: 1.9232582, y: 2.014151, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 118916057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -18.269}
 --- !u!1 &696497617
 GameObject:
@@ -886,11 +889,11 @@ Transform:
   m_GameObject: {fileID: 696497617}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.16529076, w: 0.9862449}
-  m_LocalPosition: {x: -8.24, y: -2.59, z: 10}
-  m_LocalScale: {x: 0.3001093, y: 0.31128153, z: 1}
+  m_LocalPosition: {x: -7.9175, y: -2.3029, z: 0}
+  m_LocalScale: {x: 1.5078747, y: 1.5635834, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 118916057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 19.028}
 --- !u!1 &701784715
 GameObject:
@@ -1275,12 +1278,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1007635473}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1546, y: -0.2909, z: 10}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -7.1546, y: -0.2909, z: 0}
   m_LocalScale: {x: -0.43048152, y: 0.46250418, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 118916057}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1272861180
 GameObject:
@@ -1859,6 +1862,3 @@ SceneRoots:
   - {fileID: 1621133258}
   - {fileID: 4954719792688563264}
   - {fileID: 4956058559019975999}
-  - {fileID: 1007635475}
-  - {fileID: 696497619}
-  - {fileID: 589007648}
