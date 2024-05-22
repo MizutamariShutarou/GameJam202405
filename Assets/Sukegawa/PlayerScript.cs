@@ -27,7 +27,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             _enemy = collision.GetComponent<EnemyStatus>();
-            if (!_enemy._cut) { _exclanmation.gameObject.SetActive(true); }
+            if (!_enemy._cut && _exclanmation) { _exclanmation.gameObject.SetActive(true); }
         }
     }
 
@@ -36,7 +36,7 @@ public class PlayerScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             _enemy = null;
-            _exclanmation.gameObject.SetActive(false);
+            if (_exclanmation) { _exclanmation.gameObject.SetActive(false); }
         }
 
     }
