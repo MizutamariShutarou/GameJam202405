@@ -94,16 +94,16 @@ public class Coment : MonoBehaviour
         //スコア17500の時
         else if (ScoreManager.Instance.Score <= BaseScore12)
         {
-            coment.text = ("最高の夏休みだね！");
+            coment.text = ("いいなつやすみだったわ");
         }
         //スコア40000の時
         else if (ScoreManager.Instance.Score <= BaseScore13)
         {
-            coment.text = ("ぎゃ、ぎゃくにひくわ");
+            coment.text = ("さいこうのなつやすみだね！");
         }
-        else
+        else if (ScoreManager.Instance.Score >= 50000)
         {
-            coment.text = ("最高の夏休みだね！");
+            coment.text = ("ぎゃ、ぎゃくにひくわ");
         }
 
 
