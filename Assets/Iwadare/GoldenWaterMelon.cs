@@ -8,12 +8,13 @@ public class GoldenWaterMelon : EnemyStatus
     
     public override void PlayerHitEvent() 
     {
-        ScoreManager.Instance.AddScore(_changeScore);
+        Destroy(gameObject);
         return;
     }
 
     public override void RodHitEvent() 
     {
+        ScoreManager.Instance.AddScore(_changeScore);
         Debug.Log("金メロンわりました");
         Destroy(gameObject);
     }
