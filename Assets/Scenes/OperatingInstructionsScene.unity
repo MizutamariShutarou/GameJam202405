@@ -818,7 +818,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 96b0d06cf82708d4faca247b34d7f414, type: 3}
-    m_FontSize: 30
+    m_FontSize: 37
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -829,7 +829,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.7
-  m_Text: "\u305F\u305F\u304F\uFF1A\u3068\u304F\u306B\u306A\u3057\n\u3042\u305F\u308B\uFF1A\u30BF\u30A4\u30E0-"
+  m_Text: "\u305F\u305F\u304F\uFF1A\u3068\u304F\u306B\u306A\u3057\n\u3042\u305F\u308B\uFF1A\u30BF\u30A4\u30E0-8"
 --- !u!222 &575368312
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -913,7 +913,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 96b0d06cf82708d4faca247b34d7f414, type: 3}
-    m_FontSize: 30
+    m_FontSize: 37
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -924,7 +924,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.7
-  m_Text: "\u305F\u305F\u304F\uFF1A\u30B9\u30B3\u30A2\uFF0B\n\u3042\u305F\u308B\uFF1A\u3068\u304F\u306B\u306A\u3057"
+  m_Text: "\u305F\u305F\u304F\uFF1A\u30B9\u30B3\u30A2\uFF0B2500\n\u3042\u305F\u308B\uFF1A\u3068\u304F\u306B\u306A\u3057"
 --- !u!222 &606749124
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1100,7 +1100,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 96b0d06cf82708d4faca247b34d7f414, type: 3}
-    m_FontSize: 30
+    m_FontSize: 37
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1111,7 +1111,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.7
-  m_Text: "\u305F\u305F\u304F\uFF1A\u30B9\u30B3\u30A2\uFF0B\n\u3042\u305F\u308B\uFF1A\u3068\u304F\u306B\u306A\u3057"
+  m_Text: "\u305F\u305F\u304F\uFF1A\u30B9\u30B3\u30A2\uFF0B500\n\u3042\u305F\u308B\uFF1A\u3068\u304F\u306B\u306A\u3057"
 --- !u!222 &785180794
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1705,7 +1705,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 96b0d06cf82708d4faca247b34d7f414, type: 3}
-    m_FontSize: 30
+    m_FontSize: 37
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1716,7 +1716,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.7
-  m_Text: "\u305F\u305F\u304F\uFF1A\u30B9\u30B3\u30A2-\n\u3042\u305F\u308B\uFF1A\u30B9\u30B3\u30A2-"
+  m_Text: "\u305F\u305F\u304F\uFF1A\u30B9\u30B3\u30A2-1500\n\u3042\u305F\u308B\uFF1A\u30B9\u30B3\u30A2-1500"
 --- !u!222 &1239850884
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1963,7 +1963,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 96b0d06cf82708d4faca247b34d7f414, type: 3}
-    m_FontSize: 30
+    m_FontSize: 37
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -1974,7 +1974,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.7
-  m_Text: "\u305F\u305F\u304F\uFF1A\u30B9\u30B3\u30A2\uFF0B\n\u3042\u305F\u308B\uFF1A\u30B9\u30B3\u30A2-"
+  m_Text: "\u305F\u305F\u304F\uFF1A\u30B9\u30B3\u30A2\uFF0B900\n\u3042\u305F\u308B\uFF1A\u30B9\u30B3\u30A2-600"
 --- !u!222 &1568386779
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2443,7 +2443,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 96b0d06cf82708d4faca247b34d7f414, type: 3}
-    m_FontSize: 30
+    m_FontSize: 37
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -2454,7 +2454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.7
-  m_Text: "\u305F\u305F\u304F\uFF1A\u3068\u304F\u306B\u306A\u3057\n\u3042\u305F\u308B\uFF1A\u30BF\u30A4\u30E0\uFF0B"
+  m_Text: "\u305F\u305F\u304F\uFF1A\u3068\u304F\u306B\u306A\u3057\n\u3042\u305F\u308B\uFF1A\u30BF\u30A4\u30E0\uFF0B5"
 --- !u!222 &2073482138
 CanvasRenderer:
   m_ObjectHideFlags: 0
