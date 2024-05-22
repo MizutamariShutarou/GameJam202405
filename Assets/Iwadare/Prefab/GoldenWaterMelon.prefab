@@ -169,7 +169,7 @@ MonoBehaviour:
   _destroyTime: 5
   _cutDestroyTime: 1
   _debug: 0
-  _changeScore: 1200
+  _changeScore: 2500
 --- !u!95 &8438530434353429041
 Animator:
   serializedVersion: 5
