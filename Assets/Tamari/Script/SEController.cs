@@ -38,6 +38,7 @@ public class SEController : MonoBehaviour
         _seDic.Add(SE.Conflict, _sounds[2]);
         _seDic.Add(SE.Juice, _sounds[3]);
         _seDic.Add(SE.DontHit, _sounds[4]);
+        _seDic.Add(SE.Drink, _sounds[5]);
     }
 
     public void RunSE(SE se)
@@ -53,6 +54,7 @@ public class SEController : MonoBehaviour
         Conflict,
         Juice,
         DontHit,
+        Drink,
     }
     
 }
