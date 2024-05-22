@@ -1,7 +1,7 @@
-﻿using System;
-using Unity.VisualScripting;
+﻿using DG.Tweening;
+using System;
+using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public abstract class EnemyStatus : MonoBehaviour, ItemInterface
 {
@@ -12,16 +12,16 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
     public Animator _animObject;
     public bool _isGravityScale = true;
     [SerializeField] float _destroyTime = 5f;
-
+    [SerializeField] float _cutDestroyTime = 1f;
     [SerializeField] bool _debug = false;
-    
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if(_debug) ObjectMove(_horizontalValue, _verticalValue);
-        Destroy(this.gameObject,_destroyTime);
+        if (_debug) ObjectMove(_horizontalValue, _verticalValue);
+        Destroy(this.gameObject, _destroyTime);
     }
 
     // Update is called once per frame
@@ -48,24 +48,24 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
         _rb = GetComponent<Rigidbody2D>();
         if (_rb)
         {
-            if (_isGravityScale) 
+            if (_isGravityScale)
             {
                 _rb.gravityScale = 1;
-                _rb.AddForce(Vector2.left * horizontal * _horizontalValue + 
-                    Vector2.up * vertical * _verticalValue, 
-                    ForceMode2D.Impulse); 
+                _rb.AddForce(Vector2.left * horizontal * _horizontalValue +
+                    Vector2.up * vertical * _verticalValue,
+                    ForceMode2D.Impulse);
             }
-            else 
+            else
             {
                 _rb.gravityScale = 0;
-                _rb.velocity = Vector2.left * horizontal * _horizontalValue + Vector2.up * vertical * _verticalValue; 
+                _rb.velocity = Vector2.left * horizontal * _horizontalValue + Vector2.up * vertical * _verticalValue;
             }
         }
     }
 
     void FlipX(float horizontal)
     {
-        if(horizontal < 0) 
+        if (horizontal < 0)
         {
             var scale = transform.localScale;
             scale.x *= -scale.x;
@@ -88,5 +88,13 @@ public abstract class EnemyStatus : MonoBehaviour, ItemInterface
             Debug.Log("当たった");
             PlayerHitEvent();
         }
+    }
+
+    public IEnumerator EnemyDestroyTime()
+    {
+        var mySprite = GetComponent<SpriteRenderer>();
+        yield return mySprite.DOFade(0, _destroyTime).SetLink(gameObject).WaitForCompletion();
+
+        Destroy(gameObject);
     }
 }

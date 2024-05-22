@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5889128791707079540}
   - component: {fileID: 1378994213917892847}
   - component: {fileID: 7621946437857205208}
+  - component: {fileID: 8438530434353429041}
   m_Layer: 0
   m_Name: GoldenWaterMelon
   m_TagString: Enemy
@@ -163,8 +164,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalValue: 1.5
   _verticalValue: 1
-  _animObject: {fileID: 0}
+  _animObject: {fileID: 8438530434353429041}
   _isGravityScale: 1
   _destroyTime: 5
   _debug: 0
   _changeScore: 5
+--- !u!95 &8438530434353429041
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935703440525865608}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 05c6d54a07781f24fa383fa1500934fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

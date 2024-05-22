@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,6 +9,7 @@ public class PoisonDrink : EnemyStatus
     public override void PlayerHitEvent() 
     {
         TimerManager.Instance.ChangeTime(_changeTime);
+        Destroy(gameObject);
         return;
     }
 

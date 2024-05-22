@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8158754176207441297}
   - component: {fileID: 7666235556928160733}
   - component: {fileID: 7036124695321962146}
+  - component: {fileID: 4906093702987327816}
   m_Layer: 0
   m_Name: Bom
   m_TagString: Enemy
@@ -163,8 +164,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalValue: 1
   _verticalValue: 1
-  _animObject: {fileID: 0}
+  _animObject: {fileID: 4906093702987327816}
   _isGravityScale: 1
   _destroyTime: 5
+  _cutDestroyTime: 1
   _debug: 0
   _addScore: -3
+  _explosion: {fileID: 4914367121018836764, guid: 1d407f132a4e1374b965edb75adebfed, type: 3}
+  _smork: {fileID: 474562856718498399, guid: c66455e4f022ea545b9c94f1f14f5c52, type: 3}
+--- !u!95 &4906093702987327816
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9128776293404127397}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbb279eede7feec45a96a07031d86d63, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

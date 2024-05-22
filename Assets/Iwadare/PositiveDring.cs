@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class PositiveDrink : EnemyStatus
     public override void PlayerHitEvent() 
     {
         TimerManager.Instance.ChangeTime(_changeTime);
-        return;
+        Destroy(gameObject);
     }
 
     public override void RodHitEvent() 

@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -16,6 +16,7 @@ public class GoldenWaterMelon : EnemyStatus
     {
         ScoreManager.Instance.AddScore(_changeScore);
         Debug.Log("金メロンわりました");
-        Destroy(gameObject);
+        _animObject.SetTrigger("CutTrigger");
+        StartCoroutine(EnemyDestroyTime());
     }
 }

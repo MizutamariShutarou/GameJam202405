@@ -133,6 +133,7 @@ MonoBehaviour:
   _destroyTime: 5
   _debug: 0
   _changeScore: -3
+  _deathShark: {fileID: 2758828361236859484, guid: 5079a237cdfe9bc48a61912a24b89f5c, type: 3}
 --- !u!61 &7386107775039929584
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2766170660484648064}
   - component: {fileID: 8813707232255989302}
   - component: {fileID: 7024193979597937686}
+  - component: {fileID: 5282449718838377103}
   m_Layer: 0
   m_Name: WaterMelon
   m_TagString: Enemy
@@ -101,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _horizontalValue: 1
   _verticalValue: 1
-  _animObject: {fileID: 0}
+  _animObject: {fileID: 5282449718838377103}
   _isGravityScale: 1
   _destroyTime: 5
   _debug: 0
@@ -168,3 +169,24 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.65
+--- !u!95 &5282449718838377103
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6204353493946619333}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2e584ee5e68759f40a15be89f3722430, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
