@@ -8,12 +8,13 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] MovePattern[] _rbMovePattern;
     [SerializeField] MovePattern[] _notGravityMovePattern;
     [SerializeField] EnemyStatus[] _enemys;
-    [Header("スポーン時間")]
-    [SerializeField] float _spawnCoolTime = 2f;
-    [Header("スポーンごとに短縮する時間")]
-    [SerializeField] float _spawnTimeShort = 0.05f;
+    
+    float _spawnCoolTime = 2f;
+    [Header("最大スポーン時間")]
+    [SerializeField] float _maxspawnCoolTime = 2f;
     [Header("最低スポーン時間")]
-    [SerializeField] float _minspawnCoolTime = 0.5f;
+    [SerializeField] float _minspawnCoolTime = 1f;
+    float _differenceCoolTime;
     float _currentCoolTime = 0f;
     [Header("スポーン時間を短縮するかしないか")]
     [SerializeField] bool _shortSpawn = true;
@@ -21,7 +22,8 @@ public class SpawnEnemy : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        _spawnCoolTime = _maxspawnCoolTime;
+        _differenceCoolTime = _maxspawnCoolTime - _minspawnCoolTime;
     }
 
     // Update is called once per frame
@@ -34,9 +36,10 @@ public class SpawnEnemy : MonoBehaviour
         if(_currentCoolTime < _spawnCoolTime) { return; }
 
         _currentCoolTime = 0f;
-        if (_shortSpawn)
+        if(_shortSpawn) 
         {
-            _spawnCoolTime = Mathf.Max(_spawnCoolTime - _spawnTimeShort, _minspawnCoolTime);
+            var differenceTimer = TimerManager.Instance.CurrentTime / TimerManager.Instance.LimitTimer ;
+            _spawnCoolTime = _minspawnCoolTime + (_differenceCoolTime * differenceTimer);
             Debug.Log(_spawnCoolTime);
         }
 
