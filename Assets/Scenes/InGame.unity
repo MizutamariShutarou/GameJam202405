@@ -793,7 +793,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 007f849c865a0d3419a0d13973e88cde, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _limitTimer: 5
+  _limitTimer: 60
   _timeView: {fileID: 1939163799}
 --- !u!4 &345226898
 Transform:
