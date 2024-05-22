@@ -162,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5e28d265b6366b4c9caba909be9224b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _horizontalValue: 1
+  _horizontalValue: 0.7
   _verticalValue: 1
   _animObject: {fileID: 4906093702987327816}
   _isGravityScale: 1

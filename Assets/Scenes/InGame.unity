@@ -1362,7 +1362,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _enemys.Array.size
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _enemys.Array.data[0]
@@ -1379,22 +1379,26 @@ PrefabInstance:
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _enemys.Array.data[3]
       value: 
-      objectReference: {fileID: 2807012607689105585, guid: b5187a4cc1f8009498e4e20708a0ca83, type: 3}
+      objectReference: {fileID: 2766170660484648064, guid: 3e7fb1838450eea4192b67c6a4ea0b4e, type: 3}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _enemys.Array.data[4]
       value: 
-      objectReference: {fileID: 4007336631989398044, guid: 700bb02995a81be4db17ccb56b19f42c, type: 3}
+      objectReference: {fileID: 2807012607689105585, guid: b5187a4cc1f8009498e4e20708a0ca83, type: 3}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _enemys.Array.data[5]
+      value: 
+      objectReference: {fileID: 4007336631989398044, guid: 700bb02995a81be4db17ccb56b19f42c, type: 3}
+    - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
+      propertyPath: _enemys.Array.data[6]
       value: 
       objectReference: {fileID: 4942078871842424900, guid: 9773f3da06658c84f8612c112fbe3573, type: 3}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _rbMovePattern.Array.data[1]._verticalSpeed
-      value: 9.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8433813005804409857, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: _rbMovePattern.Array.data[3]._verticalSpeed
-      value: 9.5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 8985423616086424068, guid: 4a2b6b653b0c0644492cf6d9c93a6e58, type: 3}
       propertyPath: m_Name

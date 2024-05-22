@@ -8,9 +8,15 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] MovePattern[] _rbMovePattern;
     [SerializeField] MovePattern[] _notGravityMovePattern;
     [SerializeField] EnemyStatus[] _enemys;
+    [Header("スポーン時間")]
     [SerializeField] float _spawnCoolTime = 2f;
+    [Header("スポーンごとに短縮する時間")]
+    [SerializeField] float _spawnTimeShort = 0.05f;
+    [Header("最低スポーン時間")]
+    [SerializeField] float _minspawnCoolTime = 0.5f;
     float _currentCoolTime = 0f;
-
+    [Header("スポーン時間を短縮するかしないか")]
+    [SerializeField] bool _shortSpawn = true;
     private bool _isRunning = false;
     // Start is called before the first frame update
     void Start()
@@ -28,6 +34,12 @@ public class SpawnEnemy : MonoBehaviour
         if(_currentCoolTime < _spawnCoolTime) { return; }
 
         _currentCoolTime = 0f;
+        if (_shortSpawn)
+        {
+            _spawnCoolTime = Mathf.Max(_spawnCoolTime - _spawnTimeShort, _minspawnCoolTime);
+            Debug.Log(_spawnCoolTime);
+        }
+
         var randomObj = UnityEngine.Random.Range(0, _enemys.Length);
         if (_enemys[randomObj]._isGravityScale)
         {

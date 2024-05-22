@@ -208,7 +208,7 @@ MonoBehaviour:
   - State: 0
     _spawnPoint: {fileID: 1219929009968605668}
     _horizontalSpeed: 10
-    _verticalSpeed: 5
+    _verticalSpeed: 7
   - State: 0
     _spawnPoint: {fileID: 1219929009968605668}
     _horizontalSpeed: 10
@@ -216,7 +216,7 @@ MonoBehaviour:
   - State: 2
     _spawnPoint: {fileID: 5380728837975028060}
     _horizontalSpeed: -10
-    _verticalSpeed: 5
+    _verticalSpeed: 7
   - State: 2
     _spawnPoint: {fileID: 5380728837975028060}
     _horizontalSpeed: -10
@@ -239,6 +239,15 @@ MonoBehaviour:
     _horizontalSpeed: -10
     _verticalSpeed: 0
   _enemys:
-  - {fileID: 2766170660484648064, guid: 3e7fb1838450eea4192b67c6a4ea0b4e, type: 3}
   - {fileID: 7036124695321962146, guid: ea1f6a9a53f7ad24382a31d224777e79, type: 3}
+  - {fileID: 7621946437857205208, guid: 10dfbb06bbb9d974d8407490ff8bb76b, type: 3}
+  - {fileID: 2766170660484648064, guid: 3e7fb1838450eea4192b67c6a4ea0b4e, type: 3}
+  - {fileID: 2807012607689105585, guid: b5187a4cc1f8009498e4e20708a0ca83, type: 3}
+  - {fileID: 4007336631989398044, guid: 700bb02995a81be4db17ccb56b19f42c, type: 3}
+  - {fileID: 4942078871842424900, guid: 9773f3da06658c84f8612c112fbe3573, type: 3}
+  - {fileID: 2766170660484648064, guid: 3e7fb1838450eea4192b67c6a4ea0b4e, type: 3}
+  - {fileID: 2766170660484648064, guid: 3e7fb1838450eea4192b67c6a4ea0b4e, type: 3}
   _spawnCoolTime: 2
+  _spawnTimeShort: 0.02
+  _minspawnCoolTime: 1
+  _shortSpawn: 1
