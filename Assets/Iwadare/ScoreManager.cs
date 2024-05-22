@@ -26,11 +26,15 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int score)
     {
-        if (_isRunnning)
-        {
-            _score += score;
-            _scoreView.ScoreView(_score);
-        }
+        if (!_isRunnning) return;
+        
+        _score += score;
+        _scoreView.ScoreView(_score);
+    }
+
+    public void StartAddScore()
+    {
+        _isRunnning = true;
     }
 
     public void StopAddScore()

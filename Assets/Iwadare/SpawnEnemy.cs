@@ -10,6 +10,8 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField] EnemyStatus[] _enemys;
     [SerializeField] float _spawnCoolTime = 2f;
     float _currentCoolTime = 0f;
+
+    private bool _isRunning = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,6 +21,8 @@ public class SpawnEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!_isRunning) return;
+        
         _currentCoolTime += Time.deltaTime;
 
         if(_currentCoolTime < _spawnCoolTime) { return; }
@@ -39,6 +43,11 @@ public class SpawnEnemy : MonoBehaviour
             var enemy = Instantiate(_enemys[randomObj], _notGravityMovePattern[moveNumber]._spawnPoint.position, Quaternion.identity);
             enemy.ObjectMove(_notGravityMovePattern[moveNumber]._horizontalSpeed, _notGravityMovePattern[moveNumber]._verticalSpeed);
         }
+    }
+
+    public void SetSpawner(bool isRunning)
+    {
+        _isRunning = isRunning;
     }
 
     enum MovePatternState

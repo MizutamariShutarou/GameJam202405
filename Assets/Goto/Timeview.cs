@@ -11,7 +11,7 @@ public class Timeview : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeText.text = TimerManager.Instance.Timer.ToString();
+        timeText.text = TimerManager.Instance.LimitTimer.ToString();
     }
     
     public void TimerView(float time)

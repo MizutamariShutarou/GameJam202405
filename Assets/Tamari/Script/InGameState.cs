@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum PlayerState
+public enum InGameState
 {
     None,
-    Alive,
+    Start,
     Finish,
 }
